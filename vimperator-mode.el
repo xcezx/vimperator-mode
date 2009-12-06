@@ -174,12 +174,12 @@
            vimperator-option-kwds) 'words))
 
 (defconst vimperator-font-lock-keywords
-  `(
-    (,(regexp-opt vimperator-command-kwds 'words) 0 'vimperator-command-kwds-face)
-    (,(regexp-opt vimperator-command-short-kwds 'words) . vimperator-command-kwds-face)
-    (,(regexp-opt vimperator-auto-command-kwds 'words) . vimperator-auto-command-kwds-face)
-    (,(regexp-opt vimperator-auto-event-kwds 'words) . vimperator-auto-event-kwds-face)
-    (,(regexp-opt vimperator-option-kwds 'words) . vimperator-option-kwds-face))
+  (list
+   `(,(concat "\\(^[ \t]*\\|:\\)" (regexp-opt vimperator-command-kwds 'words) "!?") 0 'vimperator-command-kwds-face)
+   `(,(concat "\\(^[ \t]*\\|:\\)" (regexp-opt vimperator-command-short-kwds 'words) "!?") 0 'vimperator-command-kwds-face)
+   `(,(regexp-opt vimperator-auto-command-kwds 'words) 0 'vimperator-auto-command-kwds-face)
+   `(,(regexp-opt vimperator-auto-event-kwds 'words) 0 'vimperator-auto-event-kwds-face)
+   `(,(regexp-opt vimperator-option-kwds 'words) 0 'vimperator-option-kwds-face))
   "Subdued level highlighting for Vimperator mode.")
 
 ;;;;
