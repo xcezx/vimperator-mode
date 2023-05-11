@@ -184,6 +184,7 @@
 
 ;;;;
 
+;;;###autoload
 (defun vimperator-mode ()
   "Major mode for editing Vimperator configuration files.
 
